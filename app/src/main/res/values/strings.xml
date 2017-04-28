@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Diaries</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_insert_diary">InsertDiary</string>
+    <string name="permissionlabel">read diaries</string>
+    <string name="permissiondescription">allows application to read diaries from de com.cookbook.app.diaries application</string>
+</resources>

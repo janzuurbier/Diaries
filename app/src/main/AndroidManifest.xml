@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="zrb.hu.nl.diaries">
+
+    <permission
+        android:protectionLevel="normal"
+        android:name="zrb.hu.nl.diaries.DiariesProvider.permission.READ_DIARIES"
+        android:description="@string/permissiondescription"
+        android:label="@string/permissionlabel">
+    </permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="zrb.hu.nl.diaries.ShowDiaries"
+            android:label="Diaries"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="zrb.hu.nl.diaries.ShowContent"
+            android:label="Diary detail"
+            android:parentActivityName="zrb.hu.nl.diaries.ShowDiaries"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="zrb.hu.nl.diaries.ShowDiaries" />
+        </activity>
+        <activity
+            android:name="zrb.hu.nl.diaries.InsertDiary"
+            android:label="@string/title_activity_insert_diary"
+            android:parentActivityName="zrb.hu.nl.diaries.ShowDiaries"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="zrb.hu.nl.diaries.ShowDiaries" />
+        </activity>
+        <provider android:name="zrb.hu.nl.diaries.DiariesProvider"
+            android:authorities="zrb.hu.nl.diaries.DiariesProvider"
+            android:exported="true"
+            android:readPermission="zrb.hu.nl.diaries.DiariesProvider.permission.READ_DIARIES">
+        </provider>
+    </application>
+
+</manifest>
